@@ -1,0 +1,23 @@
+appId: com.letter-generator.app
+productName: 存證信函產生器
+directories:
+  buildResources: resources
+  output: release
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - resources/**/*
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+extraResources:
+  - from: resources/
+    to: resources/
+    filter:
+      - "**/*"
